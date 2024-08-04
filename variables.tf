@@ -1,64 +1,70 @@
 variable "cloudflare_email" {
-  description = "アカウントのEメールアドレス"
   type        = string
+  description = "アカウントのメールアドレス"
 }
 
 variable "cloudflare_api_token" {
-  description = "アカウントのAPIキー"
   type        = string
+  description = "アカウントのAPIキー"
 }
 
 variable "cloudflare_account_id" {
-  description = "アカウントID"
   type        = string
+  description = "アカウントID"
 }
 
 variable "pages_name" {
-  description = "Cloudflare Pagesのプロジェクト名"
   type        = string
+  description = "Cloudflare Pagesのプロジェクト名"
 }
 
 variable "github_owner" {
-  description = "GitHubのリポジトリのオーナー名"
   type        = string
+  description = "GitHubのリポジトリのオーナー名"
 }
 
 variable "github_repository" {
-  description = "GitHubのリポジトリ名"
   type        = string
+  description = "GitHubのリポジトリ名"
 }
 
 variable "preview_branch" {
-  description = "プレビューブランチ名"
   type        = string
+  description = "プレビューブランチ名"
 }
 
 variable "production_branch" {
-  description = "本番ブランチ名"
   type        = string
+  description = "本番ブランチ名"
 }
 
 variable "build_command" {
-  description = "ビルドコマンド"
   type        = string
+  description = "ビルドコマンド"
 }
 
 variable "destination_dir" {
-  description = "ビルド後のディレクトリ"
   type        = string
+  description = "ビルド後のディレクトリ"
 }
 
 variable "root_dir" {
-  description = "ビルド元のディレクトリ"
   type        = string
+  description = "ビルド元のディレクトリ"
 }
 
 variable "preview_env" {
-  description = "プレビュー環境の環境変数"
   type        = map(string)
+  description = "プレビュー環境の環境変数"
+  default = {
+    "ENV" = "develop"
+  }
 }
 
 variable "production_env" {
-  description = "本番環境の環境変数"
   type        = map(string)
+  description = "本番環境の環境変数"
+  default = {
+    "ENV" = "production"
+  }
 }

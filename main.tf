@@ -6,9 +6,15 @@ terraform {
     }
   }
 }
+// 
+# module "api_token" {
+#   source = "./modules/api_token"
+#   token_name = "create_pages"
+#   permission_name = "Cloudflare Pages Edit"
+#   cloudflare_account_id = var.cloudflare_account_id
+# }
 
 provider "cloudflare" {
-  email     = var.cloudflare_email
   api_token = var.cloudflare_api_token
 }
 
@@ -40,7 +46,7 @@ resource "cloudflare_pages_project" "pages" {
   deployment_configs {
     preview {
       environment_variables = {
-        for_each : { for k, v in var.preview_env : k => v }
+        for k, v in var.preview_env : k => v
       }
 
       compatibility_date  = "2024-07-30"
@@ -48,7 +54,7 @@ resource "cloudflare_pages_project" "pages" {
     }
     production {
       environment_variables = {
-        for_each : { for k, v in var.production_env : k => v }
+        for k, v in var.production_env : k => v
       }
 
       compatibility_date  = "2024-07-30"
