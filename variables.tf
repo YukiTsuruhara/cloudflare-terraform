@@ -1,8 +1,3 @@
-variable "cloudflare_email" {
-  type        = string
-  description = "アカウントのメールアドレス"
-}
-
 variable "cloudflare_api_token" {
   type        = string
   description = "アカウントのAPIキー"
@@ -45,12 +40,12 @@ variable "build_command" {
 
 variable "destination_dir" {
   type        = string
-  description = "ビルド後のディレクトリ"
+  description = "ビルド出力ディレクトリ"
 }
 
 variable "root_dir" {
   type        = string
-  description = "ビルド元のディレクトリ"
+  description = "ルートディレクトリ"
 }
 
 variable "preview_env" {
