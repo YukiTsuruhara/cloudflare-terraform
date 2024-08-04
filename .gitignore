@@ -1,2 +1,3 @@
-# 変数は管理しない
 terraform.tfvars
+terraform.tfstate
+terraform.tfstate.backup
