@@ -6,13 +6,6 @@ terraform {
     }
   }
 }
-// 
-# module "api_token" {
-#   source = "./modules/api_token"
-#   token_name = "create_pages"
-#   permission_name = "Cloudflare Pages Edit"
-#   cloudflare_account_id = var.cloudflare_account_id
-# }
 
 provider "cloudflare" {
   api_token = var.cloudflare_api_token
